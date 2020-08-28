@@ -1,6 +1,6 @@
 import {table} from './table.js';
 
-function appRender(container, content) {
+function renderComponent(container, content) {
   // TODO: get rid of innerHTML
   container.innerHTML = '';
   container.append(content);
@@ -13,9 +13,15 @@ function renderUsers() {
   ).then(
     result => {
       const root = document.getElementById('root');
-      appRender(root, table(result));
+      renderComponent(root, table(result));
     }
   )
 }
 
 renderUsers();
+
+function toggle(elem) {
+  elem.classList.toggle("hide");
+}
+
+window.toggle = toggle;

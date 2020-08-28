@@ -5,12 +5,25 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>tmTaskProject1</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
 <div id="root"></div>
+<div id="modal" class="hide">
+    <div id="modal-content"></div>
+    <div id="map"></div>
+    <div>
+        <button onclick="toggle(document.getElementById('modal'))"> Close</button>
+    </div>
+</div>
 
 <script src="main.js" type="module"></script>
+<script
+  defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0aKwf8OikAzBMxTatENmIhJ6enltCfwc"
+  type="text/javascript">
+</script>
 </body>
 </html>

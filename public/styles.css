@@ -1,0 +1,16 @@
+#modal {
+    position: absolute;
+    top: 15%;
+    right: 15%;
+    bottom: 15%;
+    left: 15%;
+    background: antiquewhite;
+}
+
+.hide {
+    display: none;
+}
+#map {
+    height: 30%;
+    top: 50%;
+}
