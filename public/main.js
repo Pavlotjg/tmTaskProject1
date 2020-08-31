@@ -27,7 +27,11 @@ function renderUsers() {
       const root = document.getElementById('root');
       renderComponent(root, table(result));
     }
-  )
+  ).catch(() => {
+    console.error('Failed fetching of users');
+    const error = document.getElementById('error-container');
+    renderComponent(error, 'Server Error');
+  })
 }
 
 class SelectorHelper {
@@ -51,4 +55,3 @@ function Greeting(name) {
   const greetingSuffix = 'Welcome to the MetalWiki Guide';
   this.message = name ? `${name}, ${greetingSuffix}`: greetingSuffix;
 }
-

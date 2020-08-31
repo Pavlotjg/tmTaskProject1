@@ -1,8 +1,10 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     background-image: url("https://i.pinimg.com/originals/f8/e6/50/f8e6504ea39163daee928a1ee94fb056.jpg");
+    color: white;
 }
 
 #modal {
@@ -15,25 +17,27 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
-    color: white;
     font-size: 25px;
 }
+
 #modal .btn-close {
     position: absolute;
     bottom: 0;
     margin: 5px;
     padding: 5px;
     font-size: 16px;
+    color: white;
     width: 70px;
     border: none;
-    color:white;
     background-color: brown;
     text-decoration: none;
     cursor: pointer;
 }
+
 #modal .btn-close:hover, .dismissButton:hover {
     color: goldenrod;
 }
+
 .dismissButton {
     color:white;
     background-color: brown;
@@ -42,6 +46,7 @@ body {
 .hide {
     display: none;
 }
+
 #map {
     height: 70%;
     width: 70%;
@@ -63,43 +68,64 @@ body {
     padding: 5px;
     width: 270px;
     font-size: 20px;
-    color:white;
     transition: width 1s;
 }
 .row-container button {
     float: right;
     font-size: 16px;
-    width: 70px;
+    width: 90px;
     padding: 3px;
     border: none;
-    color:white;
+    color: white;
     background-color: brown;
     text-decoration: none;
     cursor: pointer;
 }
+
 .row-container button:hover {
     color: gold;
 }
+
 .row-container:hover {
     border-color: goldenrod;
     width: 285px;
 }
+
+#error-container, #root {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#csv-container {
+    font-size: 20px;
+}
+
+#csv-container button {
+    color: white;
+    background-color: brown;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 70px;
+    padding: 3px;
+}
+
 header {
     font-size: 45px;
     font-weight: bold;
-    color:white;
     text-align: center;
     padding: 10px 0;
     margin-bottom: 10px;
     border-bottom: 2px solid goldenrod;
 }
+
 section {
     height: 800px;
 }
+
 footer {
     font-size: 20px;
     font-weight: bold;
-    color:white;
     padding: 25px 5px;
     border-top: 2px solid goldenrod;
 }

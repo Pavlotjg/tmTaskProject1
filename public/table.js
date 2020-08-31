@@ -14,12 +14,16 @@ let map;
   * }
  */
 export function table(users) {
-  const newTable = document.createElement('div');
-  newTable.classList.add('main-container');
-  users.forEach( user => {
-    newTable.append(row(user));
-  });
-  return newTable;
+  try{
+    const newTable = document.createElement('div');
+    newTable.classList.add('main-container');
+    users.forEach( user => {
+      newTable.append(row(user));
+    });
+    return newTable;
+  }catch (e) {
+    return 'Render Error'
+  }
 }
 
  /**

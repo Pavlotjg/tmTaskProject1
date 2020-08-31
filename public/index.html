@@ -13,6 +13,7 @@
 <header></header>
 <section>
     <div id="root"></div>
+    <div id="error-container"></div>
     <div id="modal" class="hide">
         <div id="modal-content"></div>
         <div id="map"></div>
@@ -20,7 +21,10 @@
             <button onclick="_getElement('#modal').hide()" class="btn-close"> Close</button>
         </div>
     </div>
-    <button onclick="exportAsCSV()">Download file</button>
+    <div id="csv-container">
+        <span>To download this data as CSV-file, please click: </span>
+        <button onclick="exportAsCSV()">Download</button>
+    </div>
 </section>
 <footer>Demo version 1.0</footer>
 <script src="main.js" type="module"></script>
