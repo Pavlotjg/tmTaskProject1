@@ -1,4 +1,4 @@
-##tmTaskProject1
+## tmTaskProject1
 This is one-page application with some info of greatest band Metallica!
 Application provides:   
    - data can be saved in .csv format by one button click.
@@ -6,9 +6,9 @@ Application provides:
 ### PRE-RUN 
 Related back-end API must be started first:
 https://github.com/Pavlotjg/tmTaskProject1BackEnd
-####INSTALL
+#### INSTALL
 To install the app type in terminal command:  `npm install`
-####RUN
+#### RUN
  To start the app type in terminal command:  `npm start`
 #### IMPORTANT !!!
 DISABLE ADBLOCK TO DOWNLOAD csv-file !!!!
