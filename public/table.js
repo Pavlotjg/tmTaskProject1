@@ -1,7 +1,8 @@
 let map;
 
 export function table(users) {
-  const newTable = document.createElement('table');
+  const newTable = document.createElement('div');
+  newTable.classList.add('main-container');
   users.forEach( user => {
     newTable.append(row(user));
   });
@@ -9,28 +10,28 @@ export function table(users) {
 }
 
 function row(user) {
-  let elem = document.createElement('tr');
+  let elem = document.createElement('div');
+  elem.classList.add('row-container');
   elem.innerHTML = `
-    <td>${user.firstName}</td>
-    <td>${user.lastName}</td>
+    <span>${user.firstName}</span>
+    <span>${user.lastName}</span>
   `;
-  let actionTd = document.createElement('td');
+
   let detailsBtn = document.createElement('button');
   detailsBtn.onclick = function () {
-    toggle(document.getElementById('modal'));
+    show(document.getElementById('modal'));
     let modalContent = document.getElementById('modal-content');
-    modalContent.innerText = user.firstName +' '+ user.lastName;
+    modalContent.innerHTML = `<img src="${user.avatar}"alt="avatar">${user.firstName} ${user.lastName}  ${user.email ||''}`;
     if(map) {
       map.setCenter(new google.maps.LatLng(user.coordinate.lat, user.coordinate.lng));
     } else {
       map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: user.coordinate.lat, lng: user.coordinate.lng },
-        zoom: 8
+        zoom: 12
       });
     }
   };
   detailsBtn.innerHTML = "Details";
-  actionTd.append(detailsBtn);
-  elem.append(actionTd);
+  elem.append(detailsBtn);
   return elem;
 }

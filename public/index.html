@@ -6,19 +6,23 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>tmTaskProject1</title>
+    <link rel="shortcut icon" href="./metallica.png">
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-
-<div id="root"></div>
-<div id="modal" class="hide">
-    <div id="modal-content"></div>
-    <div id="map"></div>
-    <div>
-        <button onclick="toggle(document.getElementById('modal'))"> Close</button>
+<header>Welcome to the MetalWiki Guide</header>
+<section>
+    <div id="root"></div>
+    <div id="modal" class="hide">
+        <div id="modal-content"></div>
+        <div id="map"></div>
+        <div>
+            <button onclick="hide(document.getElementById('modal'))"  class="btn-close"> Close</button>
+        </div>
     </div>
-</div>
-
+    <button onclick="ff()">Download file</button>
+</section>
+<footer>Demo version 1.0</footer>
 <script src="main.js" type="module"></script>
 <script
   defer
