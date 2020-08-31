@@ -16,7 +16,6 @@ renderUsers().then(() => {
 );
 
 function renderComponent(container, content) {
-  // TODO: get rid of innerHTML
   container.innerHTML = '';
   container.append(content);
 }

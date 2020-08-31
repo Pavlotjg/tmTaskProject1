@@ -34,7 +34,7 @@ body {
     cursor: pointer;
 }
 
-#modal .btn-close:hover, .dismissButton:hover {
+#modal .btn-close:hover, .dismissButton:hover, #csv-container button:hover {
     color: goldenrod;
 }
 
@@ -92,12 +92,12 @@ body {
 }
 
 #error-container, #root {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 #csv-container {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 #csv-container button {
@@ -106,7 +106,7 @@ body {
     font-size: 16px;
     border: none;
     cursor: pointer;
-    width: 70px;
+    width: 90px;
     padding: 3px;
 }
 
