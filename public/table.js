@@ -10,6 +10,8 @@ export function table(users) {
 }
 
 function row(user) {
+  const { avatar = '', firstName = '', lastName = '', email = '', coordinate } = user || {};
+  const { lat, lng } = coordinate || {};
   let elem = document.createElement('div');
   elem.classList.add('row-container');
   elem.innerHTML = `
@@ -21,9 +23,9 @@ function row(user) {
   detailsBtn.onclick = function () {
     show(document.getElementById('modal'));
     let modalContent = document.getElementById('modal-content');
-    modalContent.innerHTML = `<img src="${user.avatar}"alt="avatar">${user.firstName} ${user.lastName}  ${user.email ||''}`;
+    modalContent.innerHTML = `<img src="${avatar}"alt="avatar">${firstName} ${lastName} ${email}`;
     if(map) {
-      map.setCenter(new google.maps.LatLng(user.coordinate.lat, user.coordinate.lng));
+      map.setCenter(new google.maps.LatLng(lat, lng));
     } else {
       map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: user.coordinate.lat, lng: user.coordinate.lng },
