@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-<header>Welcome to the MetalWiki Guide</header>
+<header></header>
 <section>
     <div id="root"></div>
     <div id="modal" class="hide">
         <div id="modal-content"></div>
         <div id="map"></div>
         <div>
-            <button onclick="hide(document.getElementById('modal'))"  class="btn-close"> Close</button>
+            <button onclick="_getElement('#modal').hide()" class="btn-close"> Close</button>
         </div>
     </div>
-    <button onclick="ff()">Download file</button>
+    <button onclick="exportAsCSV()">Download file</button>
 </section>
 <footer>Demo version 1.0</footer>
 <script src="main.js" type="module"></script>

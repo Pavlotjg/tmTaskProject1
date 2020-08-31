@@ -1,28 +1,19 @@
 import {table} from './table.js';
-import {formatedUsers} from './smth.js';
+import {downloadCSV} from './csvDownloader.js';
+import {fetchUsers} from "./api.js";
 
+window.exportAsCSV = downloadCSV;
+window._getElement = function (selector) {
+  return new GetElement(selector);
+};
 
-// csv start
-
-//TODO: improve code style
-function downloadCSV() {
-  let usersJson = fetchUsers();
-  usersJson.then(result => {
-    const rows = formatedUsers(result);
-    let csvContent = "data:text/csv;charset=utf-8,";
-    rows.forEach(function(rowArray) {
-      let row = rowArray.join(",");
-      csvContent += row + "\r\n";
-    });
-    let encodedUri = encodeURI(csvContent);
-    window.open(encodedUri);
-  });
-}
- window.ff = downloadCSV;
-
-// scv end
-
-
+renderUsers().then(() => {
+    const guestName = prompt('Greetings!! Tell us Your Name ...');
+    const greetings = new Greeting(guestName);
+    const htmlElem = document.querySelector('header');
+    htmlElem.innerText = greetings.message;
+  }
+);
 
 function renderComponent(container, content) {
   // TODO: get rid of innerHTML
@@ -30,15 +21,8 @@ function renderComponent(container, content) {
   container.append(content);
 }
 
-function fetchUsers() {
- return fetch('http://localhost:3100/users').then(
-   res => res.json()
- )
-}
-
 function renderUsers() {
-  //TODO: implement pagination
-  fetchUsers().then(
+  return fetchUsers().then(
     result => {
       const root = document.getElementById('root');
       renderComponent(root, table(result));
@@ -46,14 +30,25 @@ function renderUsers() {
   )
 }
 
-renderUsers();
+class SelectorHelper {
+  show() {
+    this.context.classList.remove("hide");
+  }
 
-function show(elem) {
-  elem.classList.remove("hide");
+  hide() {
+    this.context.classList.add("hide");
+  }
 }
 
-function hide(elem) {
-  elem.classList.add("hide");
+class GetElement extends SelectorHelper {
+  constructor(selector) {
+    super();
+    this.context = document.querySelector(selector);
+  }
 }
-window.show = show;
-window.hide = hide;
+
+function Greeting(name) {
+  const greetingSuffix = 'Welcome to the MetalWiki Guide';
+  this.message = name ? `${name}, ${greetingSuffix}`: greetingSuffix;
+}
+
